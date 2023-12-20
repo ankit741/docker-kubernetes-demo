@@ -158,6 +158,21 @@ minikube status
 kubectl apply -f deployment.yaml
 
 ```
+
+OR 
+
+Create deployment resources as follows:
+
+```
+kubectl create deployment {name} --image={docker-image}
+```
+
+Describe deployment as follows:
+
+```
+kubectl describe deployment {name}
+```
+
 As soon as Kubernetes receives your resources, it creates the Pods.
 
 
@@ -175,7 +190,60 @@ kubectl get pods
 ```
 kubectl get pods -o wide
 ```
-Note: internal IP can't be accessed by the outside world directly. internal ip assigned 
+Note: internal IP can't be accessed by the outside world directly. internal ip assigned.
+
+
+# Create service resources as follows:
+
+get deployments:
+
+```
+kubectl get deploy
+```
+
+Let's create a service for a given deployment: we want to expose an internal container port to any other port outside a deployment
+
+```
+kubectl expose deployment {deployment-name} --port=8081 --target-port=8080
+```
+
+get Service :
+
+```
+kubectl get services
+```
+
+The CLUSTER-IP is a virtual IP address created by Kubernetes. can access from any Node within the cluster and will be available only within the cluster not outside.
+
+```
+kubectl describe service {service-name}
+```
+
+Note: load will be balanced across all ports mentioned in endpoints.
+
+# Creating Nodeport service:
+
+delete existing CLUSTER-IP service associated with deployment as follows:
+
+```
+kubectl delete service {service-name}
+```
+
+Create a new node port service
+
+```
+kubectl expose deployment spring-docker --type=NodePort --port=8080
+```
+
+```
+minikube service spring-docker
+```
+
+try to access the URL given by Minikube. it should be available outside the cluster.
+Ex-
+```
+http://127.0.0.1:63829/ping
+```
 
 # Interact with running docker container:
 
