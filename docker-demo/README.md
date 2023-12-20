@@ -34,10 +34,13 @@ docker push ankit741/spring-docker:v1
 Creating a Kubernetes cluster on your local machine with a tool called Minikube. Minikube creates a single-node Kubernetes cluster running on a virtual machine. A Minikube cluster is only intended for testing purposes, not for production.
 
 Before you install Minikube, you have to install  [kubectl](https://kubernetes.io/docs/tasks/tools/).
+Kubernetes provides a command line tool for communicating with a Kubernetes cluster's control plane, using the Kubernetes API.
+
+Once kubectl is installed, go on and install [Minikube](https://minikube.sigs.k8s.io/docs/start/)
 
 Minikube is a local kubernetes setup primarily used for development and testing purposes. It is a lightweight setup that works with tools like Docker, Virtualbox, etc.
 
-Once kubectl is installed, go on and install [Minikube](https://minikube.sigs.k8s.io/docs/start/)
+
 
 # With Minikube installed, you can create a cluster as follows:
 
