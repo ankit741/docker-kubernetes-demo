@@ -172,6 +172,10 @@ Running get pods should now show only the new Pods:
 kubectl get pods
 ```
 
+```
+kubectl get pods -o wide
+```
+
 # Interact with running docker container:
 
 The exec command is used to interact with already running containers on the Docker host.
