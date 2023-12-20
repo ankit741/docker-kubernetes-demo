@@ -46,8 +46,9 @@ Minikube is a local kubernetes setup primarily used for development and testing 
 
 ```
 minikube start
-
 ```
+Automatically select the docker driver in Windows if installed, there are other drivers as well.
+
 The command creates a virtual machine and installs Kubernetes.
 
 When the command completes, you can verify that the cluster is created with:
