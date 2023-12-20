@@ -106,7 +106,7 @@ If you just want the dashboard URL, execute the following command. It will start
 minikube dashboard --url
 ```
 
-You have a fully-functioning Kubernetes cluster on your machine now.
+You have a fully functioning Kubernetes cluster on your machine now.
 
 # Create a file named deployment.yaml in your application directory
 
@@ -179,6 +179,16 @@ Next time you want to update these Pods, you only need to update the Deployment'
 
 ```
 kubectl describe deployments
+```
+
+# Get all namespaces available:
+```
+kubectl get namespaces
+```
+In Kubernetes, namespaces provide a mechanism for isolating groups of resources within a single cluster. Names of resources need to be unique within a namespace, but not across namespaces
+
+```
+kubectl get pods --namespace=kube-system
 ```
 
 # Stopping a Cluster
