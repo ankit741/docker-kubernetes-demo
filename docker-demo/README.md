@@ -79,6 +79,11 @@ Retrieves the IP address of the specified node.
 minikube ip
 
 ```
+SSH
+
+```minikube ssh -v 7```
+
+```minikube ssh docker@{IP Address}```
 
 # Access Minikube Kubernetes Dashboard
 The following command will open the Kubernetes dashboard directly in the browser.
