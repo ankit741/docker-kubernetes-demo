@@ -35,6 +35,8 @@ Creating a Kubernetes cluster on your local machine with a tool called Minikube.
 
 Before you install Minikube, you have to install  [kubectl](https://kubernetes.io/docs/tasks/tools/).
 
+Minikube is a local kubernetes setup primarily used for development and testing purposes. It is a lightweight setup that works with tools like Docker, Virtualbox, etc.
+
 Once kubectl is installed, go on and install [Minikube](https://minikube.sigs.k8s.io/docs/start/)
 
 # With Minikube installed, you can create a cluster as follows:
@@ -59,6 +61,19 @@ Kubernetes control plane is running at https://127.0.0.1:59296
 CoreDNS is running at https://127.0.0.1:59296/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 
 ```
+
+# Access Minikube Kubernetes Dashboard
+The following command will open the Kubernetes dashboard directly in the browser.
+```
+minikube dashboard
+```
+
+If you just want the dashboard URL, execute the following command. It will start the proxy and displays the Kubernetes dashboard URL in the output.
+
+```
+minikube dashboard --url
+```
+
 You have a fully-functioning Kubernetes cluster on your machine now.
 
 # Create a file named deployment.yaml in your application directory
