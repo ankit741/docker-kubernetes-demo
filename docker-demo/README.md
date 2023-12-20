@@ -51,6 +51,13 @@ Automatically select the docker driver in Windows if installed, there are other 
 
 The command creates a virtual machine and installs Kubernetes.
 
+
+# Check minikube status:
+```
+minikube status
+
+```
+
 When the command completes, you can verify that the cluster is created with:
 
 ```
@@ -63,6 +70,13 @@ The output will be something like this
 ```
 Kubernetes control plane is running at https://127.0.0.1:59296
 CoreDNS is running at https://127.0.0.1:59296/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+```
+
+# Retrieves the IP address of the specified node
+Retrieves the IP address of the specified node.
+```
+minikube ip
 
 ```
 
@@ -126,6 +140,7 @@ minikube status
 ```
 
 # Submit resource definitions to Kubernetes with the following command:
+
 ```
 kubectl apply -f deployment.yaml
 
@@ -134,10 +149,12 @@ As soon as Kubernetes receives your resources, it creates the Pods.
 
 
 # Check your Pods coming alive with:
+
 ```
 kubectl get pods --watch
 ```
 Running get pods should now show only the new Pods:
+
 ```
 kubectl get pods
 ```
@@ -145,6 +162,21 @@ kubectl get pods
 Next time you want to update these Pods, you only need to update the Deployment's Pod template again.
 
 # Get details of your Deployment:
+
 ```
 kubectl describe deployments
+```
+
+# Stopping a Cluster
+
+This command shuts down the minikube virtual machine, but preserves all cluster state and data. Starting the cluster again will restore it to it’s previous state
+```
+minikube stop
+```
+
+# Deleting a Cluster
+
+This command shuts down and deletes the minikube virtual machine. No data or state is preserved
+```
+minikube delete
 ```
