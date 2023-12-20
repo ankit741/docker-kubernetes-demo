@@ -38,7 +38,7 @@ Kubernetes provides a command line tool for communicating with a Kubernetes clus
 
 Once kubectl is installed, go on and install [Minikube](https://minikube.sigs.k8s.io/docs/start/)
 
-Minikube is a local kubernetes setup primarily used for development and testing purposes. It is a lightweight setup that works with tools like Docker, Virtualbox, etc.
+Minikube is a local Kubernetes setup primarily used for development and testing purposes. It is a lightweight setup that works with tools like Docker, Virtualbox, etc.
 
 
 
@@ -175,6 +175,7 @@ kubectl get pods
 ```
 kubectl get pods -o wide
 ```
+Note: internal IP can't be accessed by the outside world directly. internal ip assigned 
 
 # Interact with running docker container:
 
@@ -209,6 +210,11 @@ In Kubernetes, namespaces provide a mechanism for isolating groups of resources 
 
 ```
 kubectl get pods --namespace=kube-system
+```
+
+# Deleting a pod:
+```
+kubectl delete pod {name}
 ```
 
 # Stopping a Cluster
