@@ -175,6 +175,11 @@ kubectl get pods
 
 Next time you want to update these Pods, you only need to update the Deployment's Pod template again.
 
+# Get the details of a pod:
+```
+kubectl describe pod {pod-name}
+```
+
 # Get details of your Deployment:
 
 ```
