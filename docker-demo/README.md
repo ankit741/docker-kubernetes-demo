@@ -55,7 +55,6 @@ The command creates a virtual machine and installs Kubernetes.
 # Check minikube status:
 ```
 minikube status
-
 ```
 
 When the command completes, you can verify that the cluster is created with:
@@ -148,9 +147,9 @@ A Service forwards requests to a set of Pods
 
 So far, you created a few YAML files with resource definitions. You are going to submit your resource definitions to Kubernetes.
 And Kubernetes will bring your application to life. First of all, make sure that you have a deployment.yaml created. Also, make sure that your Minikube cluster is running:
+
 ```
 minikube status
-
 ```
 
 # Submit resource definitions to Kubernetes with the following command:
@@ -173,12 +172,24 @@ Running get pods should now show only the new Pods:
 kubectl get pods
 ```
 
+# Interact with running docker container:
+
+The exec command is used to interact with already running containers on the Docker host.
+Use docker ps to get the name of the existing container
+Use the command docker exec -it <container name> /bin/bash to get a bash shell in the container
+
+```
+docker exec -it {id} sh
+```
+
 Next time you want to update these Pods, you only need to update the Deployment's Pod template again.
 
 # Get the details of a pod:
 ```
 kubectl describe pod {pod-name}
 ```
+
+Note: Without a Service, a Pod cannot be accessed at all.
 
 # Get details of your Deployment:
 
