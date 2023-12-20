@@ -73,6 +73,15 @@ CoreDNS is running at https://127.0.0.1:59296/api/v1/namespaces/kube-system/serv
 
 ```
 
+# Retrieves Minikube node 
+
+List nodes available in the Kubernetes cluster:
+
+```
+kubectl get nodes
+```
+Note: Minikube creates a single node.
+
 # Retrieves the IP address of the specified node
 Retrieves the IP address of the specified node.
 ```
